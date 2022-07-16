@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Demo论坛</title>
+    <script src="./assets/scripts/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./assets/styles/PostList.css">
 </head>
 <body>
 <div id="postList">
@@ -20,50 +27,105 @@
         <div class="navi"></div>
         <div class="background">
             <img src="./assets/images/title.png" alt="panel" height="70%" width="95%">
-            <h2>全面战争：拿破仑等你来玩</h2>
+            <h2>demo论坛, 大家快来发帖吧</h2>
         </div>
+    </div>
+    <div class="send-post">
+        <el-button type="primary">发帖</el-button>
+    </div>
+
+    <div class="post-list">
+        <table>
+            <thead>
+                <tr>
+                    <td colspan="2">
+                        <span>全部主题</span>
+                        <span>最新</span>
+                        <span>热门</span>
+                        <span>热帖</span>
+                        <span>精华</span>
+                    </td>
+                    <td>作者</td>
+                    <td>回复/查看</td>
+                    <td>最近更新</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 32px; padding-left: 3px;">
+                        <img src="./assets/images/folder_new.gif" alt="">
+                    </td>
+                    <td><span>【帖子种类】</span>帖子标题</td>
+                    <td style="width: 135px;">
+                        <p>作者x</p>
+                        <p>2022-7-17 12：25</p>
+                    </td>
+                    <td style="width: 66px;">
+                        <p>996/</p>
+                        <p>8117</p>
+                    </td>
+                    <td style="width: 120px;">
+                        <p>作者y</p>
+                        <p>2022-7-17 12：26</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 32px; padding-left: 3px;">
+                        <img src="./assets/images/folder_new.gif" alt="">
+                    </td>
+                    <td><span>【帖子种类】</span>帖子标题</td>
+                    <td style="width: 135px;">
+                        <p>作者x</p>
+                        <p>2022-7-17 12：25</p>
+                    </td>
+                    <td style="width: 66px;">
+                        <p>996/</p>
+                        <p>8117</p>
+                    </td>
+                    <td style="width: 120px;">
+                        <p>作者y</p>
+                        <p>2022-7-17 12：26</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 32px; padding-left: 3px;">
+                        <img src="./assets/images/folder_new.gif" alt="">
+                    </td>
+                    <td><span>【帖子种类】</span>帖子标题</td>
+                    <td style="width: 135px;">
+                        <p>作者x</p>
+                        <p>2022-7-17 12：25</p>
+                    </td>
+                    <td style="width: 66px;">
+                        <p>996/</p>
+                        <p>8117</p>
+                    </td>
+                    <td style="width: 120px;">
+                        <p>作者y</p>
+                        <p>2022-7-17 12：26</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="post-page">
+        <el-pagination
+                background
+                layout="prev, pager, next"
+                :page-size="30"
+                :total="100">
+        </el-pagination>
     </div>
 </div>
 
 </body>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    .header {
-        width: 100%;
-        height: 36px;
-        padding-right: 10px;
-        line-height: 36px;
-        background-color: #000;
-        text-align: right;
-    }
-
-    .header .not-login span {
-        color:#fff;
-        padding-top: 5px;
-    }
-
-    .plate-show {
-        width:98%;
-        margin: 20px auto;
-        border: 1px solid #ccc;
-    }
-
-    .navi {
-        height: 36px;
-    }
-
-    .plate-show .background {
-        text-align: center;
-    }
-
-    .plate-show .background h2 {
-        color: blue;
-        margin: 10px 0;
-
-    }
-</style>
+<script>
+    new Vue({
+        el: '#postList',
+        data: function() {
+            return { visible: false }
+        }
+    })
+</script>
 </html>

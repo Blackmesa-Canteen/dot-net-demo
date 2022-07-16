@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标题</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h1>hao</h1>
+<p id="para">ann</p>
+<button onclick="get()">button</button>
+</body>
+
+<script>
+    
+    function get() {
+        let value = "None";
+        axios.get(
+            "https://localhost:7003/api/Test?name=hello"
+        ).then(
+            data => {
+                alert(data.data);
+            }
+        );
+    };
+    
+</script>
+</html>

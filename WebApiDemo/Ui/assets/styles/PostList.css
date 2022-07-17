@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.post-type {
+    color: blue;
+}
+
 .header {
     width: 100%;
     height: 36px;

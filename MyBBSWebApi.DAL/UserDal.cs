@@ -1,6 +1,8 @@
 ﻿using System.Data;
+using MyBBSWebApi.MODEL;
 using MySqlConnector;
 using WebApiDemo.Core;
+using SqlHelper = MyBBSWebApi.DAL.Core.SqlHelper;
 
 namespace WebApiDemo.Dal;
 

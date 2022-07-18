@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDemo", "WebApiDemo\WebApiDemo.csproj", "{C9A68818-F7C7-4CF6-9B5C-D5DBF79C1017}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBBSWebApi.DAL", "MyBBSWebApi.DAL\MyBBSWebApi.DAL.csproj", "{1FD07D2F-D417-426C-84AD-6A9E057279EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBBSWebApi.BLL", "MyBBSWebApi.BLL\MyBBSWebApi.BLL.csproj", "{B4F444E3-02AE-494B-98C4-514DF26100A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBBSWebApi.MODEL", "MyBBSWebApi.MODEL\MyBBSWebApi.MODEL.csproj", "{3B7B3870-DD06-47BF-8615-59DE35F5220C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,17 @@ Global
 		{C9A68818-F7C7-4CF6-9B5C-D5DBF79C1017}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A68818-F7C7-4CF6-9B5C-D5DBF79C1017}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A68818-F7C7-4CF6-9B5C-D5DBF79C1017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD07D2F-D417-426C-84AD-6A9E057279EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD07D2F-D417-426C-84AD-6A9E057279EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD07D2F-D417-426C-84AD-6A9E057279EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD07D2F-D417-426C-84AD-6A9E057279EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F444E3-02AE-494B-98C4-514DF26100A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F444E3-02AE-494B-98C4-514DF26100A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F444E3-02AE-494B-98C4-514DF26100A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F444E3-02AE-494B-98C4-514DF26100A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7B3870-DD06-47BF-8615-59DE35F5220C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7B3870-DD06-47BF-8615-59DE35F5220C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7B3870-DD06-47BF-8615-59DE35F5220C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7B3870-DD06-47BF-8615-59DE35F5220C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

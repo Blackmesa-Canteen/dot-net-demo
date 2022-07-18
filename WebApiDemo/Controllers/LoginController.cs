@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using MyBBSWebApi.BLL.Interfaces;
+using MyBBSWebApi.MODEL;
 using MySqlConnector;
-using WebApiDemo.Core;
 using WebApiDemo.Dal;
 
 namespace WebApiDemo.Controllers
@@ -9,12 +10,16 @@ namespace WebApiDemo.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        private readonly IUserBll userBll;
+
+        public LoginController(IUserBll userBll)
+        {
+            this.userBll = userBll;
+        }
         [HttpGet]
         public string Get(string userNo, string password)
         {
-            UserDal userDal = new UserDal();
-            User? user = userDal.GetUserByUserNoAndPassword(userNo, password);
-            return user != null ? "Login successed!" : "Login Failed";
+            return userBll.CheckLogin(userNo, password) ? "Success." : "denied.";
         }
         
         [HttpPost]

@@ -2845,6 +2845,58 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "MyBBSWebApi.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MyBBSWebApi.DAL": "1.0.0",
+          "MyBBSWebApi.MODEL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyBBSWebApi.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBBSWebApi.BLL.dll": {}
+        }
+      },
+      "MyBBSWebApi.CORE/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MySqlConnector": "2.1.11"
+        },
+        "compile": {
+          "bin/placeholder/MyBBSWebApi.CORE.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBBSWebApi.CORE.dll": {}
+        }
+      },
+      "MyBBSWebApi.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "MyBBSWebApi.CORE": "1.0.0",
+          "MyBBSWebApi.MODEL": "1.0.0",
+          "MySqlConnector": "2.1.11"
+        },
+        "compile": {
+          "bin/placeholder/MyBBSWebApi.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBBSWebApi.DAL.dll": {}
+        }
+      },
+      "MyBBSWebApi.MODEL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/MyBBSWebApi.MODEL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyBBSWebApi.MODEL.dll": {}
+        }
       }
     }
   },
@@ -8862,11 +8914,33 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "MyBBSWebApi.BLL/1.0.0": {
+      "type": "project",
+      "path": "../MyBBSWebApi.BLL/MyBBSWebApi.BLL.csproj",
+      "msbuildProject": "../MyBBSWebApi.BLL/MyBBSWebApi.BLL.csproj"
+    },
+    "MyBBSWebApi.CORE/1.0.0": {
+      "type": "project",
+      "path": "../MyBBSWebApi.CORE/MyBBSWebApi.CORE.csproj",
+      "msbuildProject": "../MyBBSWebApi.CORE/MyBBSWebApi.CORE.csproj"
+    },
+    "MyBBSWebApi.DAL/1.0.0": {
+      "type": "project",
+      "path": "../MyBBSWebApi.DAL/MyBBSWebApi.DAL.csproj",
+      "msbuildProject": "../MyBBSWebApi.DAL/MyBBSWebApi.DAL.csproj"
+    },
+    "MyBBSWebApi.MODEL/1.0.0": {
+      "type": "project",
+      "path": "../MyBBSWebApi.MODEL/MyBBSWebApi.MODEL.csproj",
+      "msbuildProject": "../MyBBSWebApi.MODEL/MyBBSWebApi.MODEL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.7",
+      "MyBBSWebApi.BLL >= 1.0.0",
+      "MyBBSWebApi.MODEL >= 1.0.0",
       "MySqlConnector >= 2.1.11",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -8897,7 +8971,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\projects\\webapp-proj\\web-api-demo\\WebApiDemo\\MyBBSWebApi.BLL\\MyBBSWebApi.BLL.csproj": {
+              "projectPath": "E:\\projects\\webapp-proj\\web-api-demo\\WebApiDemo\\MyBBSWebApi.BLL\\MyBBSWebApi.BLL.csproj"
+            },
+            "E:\\projects\\webapp-proj\\web-api-demo\\WebApiDemo\\MyBBSWebApi.MODEL\\MyBBSWebApi.MODEL.csproj": {
+              "projectPath": "E:\\projects\\webapp-proj\\web-api-demo\\WebApiDemo\\MyBBSWebApi.MODEL\\MyBBSWebApi.MODEL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

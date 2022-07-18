@@ -16,4 +16,13 @@
       <_ContentIncludedByDefault Remove="Views\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\MyBBSWebApi.BLL\MyBBSWebApi.BLL.csproj" />
+      <ProjectReference Include="..\MyBBSWebApi.MODEL\MyBBSWebApi.MODEL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Core" />
+    </ItemGroup>
+
 </Project>

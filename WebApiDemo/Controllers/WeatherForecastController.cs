@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MyBBSWebApi.MODEL;
 
 namespace WebApiDemo.Controllers;
 

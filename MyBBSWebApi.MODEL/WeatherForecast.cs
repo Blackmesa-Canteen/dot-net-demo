@@ -1,4 +1,4 @@
-namespace WebApiDemo;
+namespace MyBBSWebApi.MODEL;
 
 public class WeatherForecast
 {

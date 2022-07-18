@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using MySqlConnector;
 
-namespace WebApiDemo.Core;
+namespace MyBBSWebApi.DAL.Core;
 
 public class SqlHelper
 {

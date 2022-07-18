@@ -9,6 +9,8 @@
       "WebApiDemo/1.0.0": {
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.7",
+          "MyBBSWebApi.BLL": "1.0.0",
+          "MyBBSWebApi.MODEL": "1.0.0",
           "MySqlConnector": "2.1.11",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -2047,6 +2049,38 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "MyBBSWebApi.BLL/1.0.0": {
+        "dependencies": {
+          "MyBBSWebApi.DAL": "1.0.0",
+          "MyBBSWebApi.MODEL": "1.0.0"
+        },
+        "runtime": {
+          "MyBBSWebApi.BLL.dll": {}
+        }
+      },
+      "MyBBSWebApi.CORE/1.0.0": {
+        "dependencies": {
+          "MySqlConnector": "2.1.11"
+        },
+        "runtime": {
+          "MyBBSWebApi.CORE.dll": {}
+        }
+      },
+      "MyBBSWebApi.DAL/1.0.0": {
+        "dependencies": {
+          "MyBBSWebApi.CORE": "1.0.0",
+          "MyBBSWebApi.MODEL": "1.0.0",
+          "MySqlConnector": "2.1.11"
+        },
+        "runtime": {
+          "MyBBSWebApi.DAL.dll": {}
+        }
+      },
+      "MyBBSWebApi.MODEL/1.0.0": {
+        "runtime": {
+          "MyBBSWebApi.MODEL.dll": {}
+        }
       }
     }
   },
@@ -3140,6 +3174,26 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "MyBBSWebApi.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBBSWebApi.CORE/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBBSWebApi.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyBBSWebApi.MODEL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

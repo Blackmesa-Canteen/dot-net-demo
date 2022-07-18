@@ -5,9 +5,9 @@ namespace WebApiDemo.Core;
 
 public class SqlHelper
 {
-    private string ConnectionString { get; set; } = "Server=localhost;Database=MyBBSDb;Uid=root;Pwd=123456";
+    private static string ConnectionString { get; set; } = "Server=localhost;Database=MyBBSDb;Uid=root;Pwd=123456";
 
-    public DataTable ExecuteTable(string cmdText, params MySqlParameter[] sqlParameters)
+    public static DataTable ExecuteTable(string cmdText, params MySqlParameter[] sqlParameters)
     {
         using MySqlConnection conn = new MySqlConnection(ConnectionString);
         conn.Open();
@@ -19,7 +19,7 @@ public class SqlHelper
         return ds.Tables[0];
     }
 
-    public int ExecuteNonQuery(string cmdText, params MySqlParameter[] sqlParameters)
+    public static int ExecuteNonQuery(string cmdText, params MySqlParameter[] sqlParameters)
     {
         using MySqlConnection conn = new MySqlConnection(ConnectionString);
         conn.Open();

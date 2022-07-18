@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using WebApiDemo.Core;
+using WebApiDemo.Dal;
 
 namespace WebApiDemo.Controllers
 {
@@ -17,71 +12,41 @@ namespace WebApiDemo.Controllers
         [HttpGet]
         public string Get(string userNo, string password)
         {
-            SqlHelper sqlHelper = new SqlHelper();
-            DataTable res = sqlHelper.ExecuteTable("SELECT * FROM User");
-            DataRow dataRow = null;
-            if (res.Rows.Count > 0)
-            {
-                dataRow = res.Rows[0];
-            }
-
-            if (dataRow == null)
-            {
-                return "Login Failed"; 
-            }
-            
-            var resUserNo = dataRow["UserNo"].ToString();
-            var resPassword = dataRow["Password"].ToString();
-            if (resUserNo == userNo && resPassword == password)
-            {
-                return "Login successed!";
-            }
-            else
-            {
-                return "Login Failed";
-            }
-            
+            UserDal userDal = new UserDal();
+            User? user = userDal.GetUserByUserNoAndPassword(userNo, password);
+            return user != null ? "Login successed!" : "Login Failed";
         }
         
         [HttpPost]
-        public string Insert(string userNo, string userName, int userLevel, string password)
+        public int Insert(string userNo, string userName, int userLevel, string password)
         {
-            SqlHelper sqlHelper = new SqlHelper();
-
-            sqlHelper.ExecuteNonQuery(
-                "INSERT INTO User (UserNo, UserName, UserLevel, Password) VALUES('@UserNo','@UserName', '@UserLevel', '@Password')",
-                new MySqlParameter("@UserNo", userNo),
-                new MySqlParameter("@UserName", userName),
-                new MySqlParameter("@UserLevel", userLevel),
-                new MySqlParameter("@Password", password)
-                );
-
-            return "done";
+            UserDal userDal = new UserDal();
+            User user = new User();
+            user.UserNo = userNo;
+            user.UserName = userName;
+            user.UserLevel = userLevel;
+            user.Password = password;
+            return userDal.AddUser(user);
         }
 
         [HttpPut]
-        public string Update()
+        public int Update(int id, string userNo, string userName, int userLevel, string password)
         {
-            SqlHelper sqlHelper = new SqlHelper();
-
-            sqlHelper.ExecuteNonQuery(
-                "UPDATE User SET Password = '123456' WHERE Id = 1"
-            );
-
-            return "done";
+            UserDal userDal = new UserDal();
+            User user = new User();
+            user.Id = id;
+            user.UserNo = userNo;
+            user.UserName = userName;
+            user.UserLevel = userLevel;
+            user.Password = password;
+            return userDal.UpdateUser(user);
         }
 
         [HttpDelete]
-        public string Remove(string userNo, string userName)
+        public int Remove(int id)
         {
-            SqlHelper sqlHelper = new SqlHelper();
-
-            sqlHelper.ExecuteNonQuery(
-                "DELETE FROM User WHERE UserNo = @UserNo AND UserName = @UserName",
-                new MySqlParameter("@UserNo", userNo),
-                new MySqlParameter("@UserName", userName)
-            );
-            return "done";
+            UserDal userDal = new UserDal();
+            return userDal.RemoveUserById(id);
         }
     }
 }
